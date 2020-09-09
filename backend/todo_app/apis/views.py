@@ -9,7 +9,7 @@ class ListTodo(generics.ListCreateAPIView):
 	queryset = models.Todo.objects.all()
 	serializer_class = TodoSerializer
 
-class DerailTodo(generics.RetriveUpdateDestroyAPIView):
+class DerailTodo(generics.RetrieveUpdateDestroyAPIView):
 	queryset = models.Todo.objects.all()
 	serializer_class = TodoSerializer
 
