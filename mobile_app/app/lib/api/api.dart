@@ -3,7 +3,7 @@ import 'package:app/models/todo.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class TOdoProvider with ChangeNotifier {
+class TodoProvider with ChangeNotifier {
   List<Todo> _todos = [];
 
   List<Todo> get todos {
