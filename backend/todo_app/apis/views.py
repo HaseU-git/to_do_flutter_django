@@ -7,9 +7,9 @@ from .serializers import TodoSerializer
 
 class ListTodo(generics.ListCreateAPIView):
 	queryset = models.Todo.objects.all()
-	serializer_class = TodoSetialize
+	serializer_class = TodoSerializer
 
 class DerailTodo(generics.RetriveUpdateDestroyAPIView):
 	queryset = models.Todo.objects.all()
-	serializer_class = TodoSetialize
+	serializer_class = TodoSerializer
 
