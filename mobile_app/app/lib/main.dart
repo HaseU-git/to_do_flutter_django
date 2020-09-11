@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:app/api/api.dart';
+import 'package:app/screens/addTodo.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,6 +42,10 @@ class HomePage extends StatelessWidget {
                   (todoP.todos[index].description),
                 ));
           }),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (ctx) => AddTodoScreen()));
+      }),
     );
   }
 }
