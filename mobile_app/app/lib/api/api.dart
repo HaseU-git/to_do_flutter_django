@@ -27,7 +27,7 @@ class TodoProvider with ChangeNotifier {
   }
 
   void deleteTodo(Todo todo) async{
-    final response = await http.delete('http://127.0.0.1:8000/apis/v1/${todo.id}');
+    final response = await http.delete('http://127.0.0.1:8000/apis/v1/${todo.id}/');
     if (response.statusCode == 204) {
       _todos.remove(todo);
       notifyListeners();
