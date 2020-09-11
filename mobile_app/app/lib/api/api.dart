@@ -19,6 +19,9 @@ class TodoProvider with ChangeNotifier {
         "http://127.0.0.1:8000/apis/v1/?format=json",
         headers: {"Content-Type": "application/json"},
         body: json.encode(todo));
+    if (response.statusCode == 201) {
+      _todos.add(todo);
+    }
   }
 
   fetchTask() async {
