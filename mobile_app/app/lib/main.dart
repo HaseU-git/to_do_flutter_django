@@ -37,6 +37,11 @@ class HomePage extends StatelessWidget {
           itemCount: todoP.todos.length,
           itemBuilder: (BuildContext context, int index) {
             return ListTile(
+                trailing: IconButton(
+                    icon: Icon(Icons.delete, color: Colors.red),
+                    onPressed: () {
+                      todoP.deleteTodo(todoP.todos[index]);
+                    }),
                 title: Text(todoP.todos[index].title),
                 subtitle: Text(
                   (todoP.todos[index].description),
