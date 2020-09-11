@@ -21,6 +21,7 @@ class TodoProvider with ChangeNotifier {
         body: json.encode(todo));
     if (response.statusCode == 201) {
       _todos.add(todo);
+      notifyListeners();
     }
   }
 
