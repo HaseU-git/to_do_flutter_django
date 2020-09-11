@@ -42,10 +42,15 @@ class HomePage extends StatelessWidget {
                   (todoP.todos[index].description),
                 ));
           }),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (ctx) => AddTodoScreen()));
-      }),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(
+            Icons.add,
+            size: 30,
+          ),
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (ctx) => AddTodoScreen()));
+          }),
     );
   }
 }
