@@ -20,6 +20,7 @@ class TodoProvider with ChangeNotifier {
         headers: {"Content-Type": "application/json"},
         body: json.encode(todo));
     if (response.statusCode == 201) {
+      todo.id = json.decode(response.body)["id"];
       _todos.add(todo);
       notifyListeners();
     }
