@@ -14,10 +14,17 @@ class TodoProvider with ChangeNotifier {
     return [..._todos];
   }
 
+  void addTodo(Todo todo) async {
+    final response = await http.post(
+        "http://127.0.0.1:8000/apis/v1/?format=json",
+        headers: {"Content-Type": "application/json"},
+        body: json.encode(todo));
+  }
+
   fetchTask() async {
     final url = "http://127.0.0.1:8000/apis/v1/?format=json";
     final response = await http.get(url);
-    if (response.statusCode==200){
+    if (response.statusCode == 200) {
       var data = json.decode(response.body) as List;
       _todos = data.map<Todo>((json) => Todo.fromJson(json)).toList();
     }
