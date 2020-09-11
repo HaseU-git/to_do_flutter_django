@@ -14,5 +14,5 @@ class Todo {
   }
 
   dynamic toJson() =>
-      {'id': DateTime.now(), 'title': title, 'description': description};
+      {'id': id, 'title': title, 'description': description};
 }
